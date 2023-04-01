@@ -1,10 +1,10 @@
 /* declaración de funciones */
 
 function registroCuenta() {
-    nombre = prompt("El correo ingresado no se encuentra registrado. Por favor, ingrese su nombre")
+    nombre = prompt("El correo ingresado no se encuentra registrado. Por favor, ingrese su nombre");
     usuarioNuevo = prompt("Ingrese su e-mail para poder registrarse.");
     usuario = usuarioNuevo.toUpperCase();
-    contrasena = prompt("Ingrese su contraseña");
+    contrasenaNueva = prompt("Ingrese su contraseña");
     contrasena = contrasenaNueva;
     do {
         usuarioVerificacion = prompt("Ingrese su e-mail para acceder a su cuenta");
@@ -184,7 +184,7 @@ function seleccionMedioPago(){
 
 let usuario = "";
 let contrasena;
-let nombre = ""
+let nombre;
 let usuarioVerificacion;
 let contrasenaverificacion;
 let importe;
