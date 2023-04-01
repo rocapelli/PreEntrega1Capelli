@@ -1,14 +1,16 @@
 /* declaración de funciones */
 
-function ingresoACuenta() {
-    while (usuarioNuevo.toUpperCase() != usuario) {
-        usuarioNuevo = prompt("Su e-mail no se encuentra registrado. Por favor, vuelva a ingresarlo para poder registrarse.");
-        usuario = usuarioNuevo.toUpperCase();
-    }
-    if (usuarioNuevo.toUpperCase() == usuario) {
-        contrasena = prompt("Ingrese su contraseña");
-        alert("¡Le damos la bienvenida a Cinema Paradiso!");
-    }
+function registroCuenta() {
+    nombre = prompt("El correo ingresado no se encuentra registrado. Por favor, ingrese su nombre")
+    usuarioNuevo = prompt("Ingrese su e-mail para poder registrarse.");
+    usuario = usuarioNuevo.toUpperCase();
+    contrasena = prompt("Ingrese su contraseña");
+    contrasena = contrasenaNueva;
+    do {
+        usuarioVerificacion = prompt("Ingrese su e-mail para acceder a su cuenta");
+        contrasenaverificacion = prompt("Ingrese su contraseña");
+    } while (usuarioVerificacion.toUpperCase() != usuario && contrasenaverificacion != contrasena);
+    alert("¡Le damos la bienvenida a Cinema Paradiso!");
 }
 
 function seleccionCine() {
@@ -182,11 +184,28 @@ function seleccionMedioPago(){
 
 let usuario = "";
 let contrasena;
+let nombre = ""
+let usuarioVerificacion;
+let contrasenaverificacion;
 let importe;
 
 let usuarioNuevo = prompt("Ingrese su e-mail para acceder a su cuenta");
+let contrasenaNueva = prompt("Ingrese su contraseña");
 
-ingresoACuenta();
+if (usuarioNuevo.toUpperCase() == usuario && contrasenaNueva == contrasena) {
+    alert("¡Le damos la bienvenida a Cinema Paradiso!");
+}
+
+if (usuarioNuevo.toUpperCase() == usuario && contrasenaNueva != contrasena) {
+    while (contrasenaNueva != contrasena) {
+        contrasenaNueva = prompt("La contraseña no es correcta. Vuelva a ingresarla.");
+    }
+    alert("¡Le damos la bienvenida a Cinema Paradiso!");
+}
+
+if (usuarioNuevo.toUpperCase() != usuario) {
+    registroCuenta();
+}
 
 let cine = prompt("Ingrese la opción del complejo al que desea ir: \n A. Belgrano \n B. Palermo \n C. Recoleta");
 
@@ -230,8 +249,13 @@ alert("DETALLE DE LA COMPRA: \n Cine: " + cine + "\n Película: " + pelicula + "
 
 /* PRUEBAS */
 
+console.log(nombre);
 console.log(usuario);
 console.log(contrasena);
+console.log(usuarioNuevo);
+console.log(contrasenaNueva);
+console.log(usuarioVerificacion);
+console.log(contrasenaverificacion);
 console.log(cine);
 console.log(pelicula);
 console.log(formato);
