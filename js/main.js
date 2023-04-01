@@ -9,7 +9,7 @@ function registroCuenta() {
     do {
         usuarioVerificacion = prompt("Ingrese su e-mail para acceder a su cuenta");
         contrasenaverificacion = prompt("Ingrese su contraseña");
-    } while (usuarioVerificacion.toUpperCase() != usuario && contrasenaverificacion != contrasena);
+    } while (!(usuarioVerificacion.toUpperCase() == usuario && contrasenaverificacion == contrasena));
     alert("¡Le damos la bienvenida a Cinema Paradiso!");
 }
 
